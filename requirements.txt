@@ -1,0 +1,4 @@
+yfinance
+sqlite3
+alpaca-trade-api
+fastapi
