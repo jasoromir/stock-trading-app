@@ -2,7 +2,7 @@
 
 {% block content %}
 
-	<h1><a href="/">Stocks </a>
+	<h1><a href="/strategies">Strategies </a>
 		<i class= "angle double right icon"></i>
 		{{strategy.name}}
 	</h1>
@@ -18,8 +18,8 @@
 		<tbody>
 			{% for stock in stocks %}
 			<tr>
-				<td>{{ stock.symbol}}</td>
-				<td>{{ stock.name}}</td>
+				<td>{{stock.symbol}}</td>
+				<td><a href="/stock/{{stock.symbol}}">{{stock.name}}</a> </td>
 			</tr>
 		</tbody>
 		{% endfor %}

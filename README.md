@@ -22,4 +22,7 @@ We can create a new database from the command line running the sqlite3 command f
 sqlite3 name-DB.db
 ```
 
+
+uvicorn main:app --reload
+
 Credits to: Part Time Larry 

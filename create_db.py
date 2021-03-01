@@ -11,7 +11,8 @@ cursor.execute("""
 		id INTEGER PRIMARY KEY,
 		symbol TEXT NOT NULL UNIQUE,
 		name TEXT NOT NULL,
-		exchange TEXT NOT NULL
+		exchange TEXT NOT NULL,
+		shortable BOOLEAN NOT NULL
 		)
 	""")
 
@@ -34,7 +35,7 @@ cursor.execute("""
 cursor.execute("""
 	CREATE TABLE IF NOT EXISTS strategy(
 		id INTEGER PRIMARY KEY,
-		name NOT NULL
+		name NOT NULL UNIQUE
 		)
 	""")
 

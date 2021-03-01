@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>Orders</h1>
+
+	<table class="ui inverted black striped table">
+		
+		<thead>
+			<tr>
+				<th>Created at</th>
+				<th>Symbol</th>
+				<th>Side</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+
+		<tbody>
+		{% for order in orders %}
+		<tr>
+			<td>{{order.created_at}}</td>
+			<td>{{order.symbol}}</td>
+			<td>{{order.side}}</td>
+			<td>{{order.filled_avg_price}}</td>
+			<td>{{order.filled_qty}}</td>
+			<td>{{order.status}}</td>
+		</tr>
+		{% endfor %}
+		</tbody>	
+
+	</table>
+
+{% endblock %}
