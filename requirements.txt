@@ -1,4 +1,7 @@
-yfinance
-sqlite3
-alpaca-trade-api
-fastapi
+numpy==1.19.5
+pytz==2020.5
+tulipy==0.4.0
+yfinance==0.1.55
+pandas==1.2.0
+alpaca_trade_api==0.53.0
+fastapi==0.63.0

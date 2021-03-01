@@ -13,6 +13,7 @@
 			<tr>
 				<th>Symbol</th>
 				<th>Name</th>
+				<th>Remove</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -20,6 +21,7 @@
 			<tr>
 				<td>{{stock.symbol}}</td>
 				<td><a href="/stock/{{stock.symbol}}">{{stock.name}}</a> </td>
+				<td><input type="submit" value="Remove"/></td>
 			</tr>
 		</tbody>
 		{% endfor %}

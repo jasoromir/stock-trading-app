@@ -99,8 +99,20 @@ def index(request: Request):
 
 	rows = cursor.fetchall()
 
+	cursor.execute("""
+		SELECT symbol, close, sma_20, sma_50, rsi_14
+		FROM stock JOIN stock_price
+			ON stock_price.stock_id = stock.id
+		WHERE date = ?
+		""", (current_date,))
 
-	return templates.TemplateResponse("index.html", {'request': request, 'stocks': rows})
+	indicator_rows = cursor.fetchall()
+	indicator_values = dict()
+	for row in indicator_rows:
+		indicator_values[row['symbol']] = row
+
+
+	return templates.TemplateResponse("index.html", {'request': request, 'stocks': rows, 'indicator_values': indicator_values})
 	#return{'title': 'Dashboard', 'stocks': rows}
 
 @app.get("/stock/{symbol}")
